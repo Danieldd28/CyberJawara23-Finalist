@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Visitor</title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 300px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"], button[type="submit"] {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="text"]:hover, input[type="text"]:focus, button[type="submit"]:hover, button[type="submit"]:focus {
+            border-color: #999;
+        }
+
+        button[type="submit"] {
+            background-color: #0056b3;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #004494;
+        }
+    </style>
+</head>
+<body>
+    <form action="/submit" method="post">
+        <label for="url">URL:</label>
+        <input type="text" id="url" name="url" required>
+        <div class="g-recaptcha" data-sitekey="6LfmVSMpAAAAAGNELwUw0qSfoniwb_RVFTsbn2D9"></div>
+        <button type="submit">Visit URL</button>
+    </form>
+</body>
+</html>
